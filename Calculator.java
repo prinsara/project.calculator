@@ -8,24 +8,31 @@ public class Calculator {
 
         int result = 0;
 
-        for (; ; ) {
+        for ( ;; ) {
 
-            System.out.println("첫 번재 숫자를 입력하세요: ");
+            System.out.println("첫 번째 숫자를 입력하세요: ");
             int apple = sc.nextInt();
+            if ( apple < 0 ) {
+                System.out.println("양의 정수만 입력해주세요.");
+                continue;
+            }
 
             System.out.println("사칙연산 기호를 입력하세요: ");
             char melon = sc.next().charAt(0);
             if (!(melon == '+' || melon == '-' || melon == '*' || melon == '/')) {
-                System.out.println("사칙연산 기호만 입력 처음으로 돌아가기 고고");
+                System.out.println("사칙연산 기호만 입력 가능합니다. 처음부터 다시 입력해주세요.");
                 continue;
             }
 
 
             System.out.println("두 번째 숫자를 입력하세요: ");
             int banana = sc.nextInt();
+            if ( apple < 0 ) {
+                System.out.println("양의 정수만 입력해주세요.");
+                continue;
 
             if (banana == 0 && melon == '/') {
-                System.out.println(" 나눗셈일 때 두 번째 숫자가 0이면 안돼용");
+                System.out.println("나누기를 할 때 두 번째 숫자가 0이면 안됩니다. 처음부터 다시 입력해주세요.");
                 continue;
             }
 
