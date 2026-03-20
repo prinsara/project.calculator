@@ -27,16 +27,17 @@ public class Calculator {
 
             System.out.println("두 번째 숫자를 입력하세요: ");
             int banana = sc.nextInt();
-            if ( apple < 0 ) {
+            if (apple < 0) { //띄어쓰기
                 System.out.println("양의 정수만 입력해주세요.");
                 continue;
+            }
 
             if (banana == 0 && melon == '/') {
                 System.out.println("나누기를 할 때 두 번째 숫자가 0이면 안됩니다. 처음부터 다시 입력해주세요.");
                 continue;
             }
 
-            if ( melon == '+'){
+            if (melon == '+'){
                 result = apple + banana;
             }
 
