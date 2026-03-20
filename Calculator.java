@@ -50,8 +50,8 @@ public class Calculator {
 
                 case '/':
                     if (second == 0) {
-                        System.out.println("나눗셈 두번째 숫자 0ㄴㄴ"); // 
-                        break;
+                        System.out.println("나눗셈 두번째 숫자 0ㄴㄴ");
+                        continue;
                     }
                     result = first / second;
             }
@@ -63,9 +63,6 @@ public class Calculator {
                 break;
 
             }
-
-
-
         }
     }
 }
