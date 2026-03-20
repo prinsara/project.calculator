@@ -20,18 +20,21 @@ public class Calculator {
         char melon = sc.next() .charAt(0); //문자열로 받고 맨 앞글자 꺼내기, Scanner는 글자 하나를 못 꺼낸다.
 
     if ( melon == '+') {
+       result = apple + banana;
     }
     if ( melon == '-') {
+       result = apple - banana;
     }
     if ( melon == '*') {
+        result = apple * banana;
     }
     if ( melon == '/') {
         if ( e == 0 ) {
-            System.out.println(" 0은안돼 ");
+            System.out.println(" 0은안돼ㅇㄴㄹㅇㄴㅁㄹ ");
         }
+        result = apple / banana;
     }
-
-
+        System.out.println("결과: " + result);
 
     }
 }
