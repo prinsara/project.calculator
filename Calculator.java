@@ -19,6 +19,9 @@ public class Calculator {
         System.out.print("사칙연산 기호를 입력하세요: ");
         char melon = sc.next() .charAt(0); //문자열로 받고 맨 앞글자 꺼내기, Scanner는 글자 하나를 못 꺼낸다.
 
+        // hi
+        // h위에까진 맞았죠?^^ 개큰성장~! 님
+        // 근데
     if ( melon == '+') {
        result = apple + banana;
     }
@@ -29,10 +32,11 @@ public class Calculator {
         result = apple * banana;
     }
     if ( melon == '/') {
-        if ( e == 0 ) {
+        if ( banana == 0 ) {
             System.out.println(" 0은안돼ㅇㄴㄹㅇㄴㅁㄹ ");
         }
-        result = apple / banana;
+        else result = apple / banana;
+
     }
         System.out.println("결과: " + result);
 
