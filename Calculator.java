@@ -34,34 +34,34 @@ public class Calculator {
                 continue;
             }
 
-            //여태 if로 진행해보았으니, 다른 것도 사용해보기
-            //시작 -> 첫 번째 숫자 입력 받기 -> 기호 입력 받기 -> 두 번째 숫자 입력 받기 -> 다만 '/' 할 때 두 번째 정수가 0이면 걸러지는 구간은 '/' 계산할 때 만들어보자
-            // 계산 구간
+            //계산 부분
 
             switch (operator) {
                 case '+': result = first + second;
-                break;
+                    break;
 
                 case '-': result = first - second;
-                break;
+                    break;
 
                 case '*': result = first * second;
-                break;
+                    break;
 
                 case '/':
                     if (second == 0) {
-                        System.out.println("나눗셈 두번째 숫자 0ㄴㄴ");
+                        System.out.println("나눗셈 연산에서 두번째 숫자에 0이 입력될 수 없습니다. 처음부터 다시 입력해주세요.");
                         continue;
                     }
                     result = first / second;
             }
+
+            //결과, exit 입력하면 종료 되는 부분
             System.out.println("결과: " + result);
 
-            System.out.println("더 계산 하시겠습니까? exit 입력하시면됨");
-            String exit = sc.next();
+            System.out.println("더 계산 하시겠습니까? (exit 입력 시 종료)");
+
+            String exit = sc.next(); //
             if (exit.equals("exit")) {
                 break;
-
             }
         }
     }
