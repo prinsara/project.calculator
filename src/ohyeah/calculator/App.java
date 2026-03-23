@@ -7,8 +7,9 @@ public class App {
     public static void main(String[] args) {
         //스캐너 사용 선언
         Scanner sc = new Scanner(System.in);
-        //결과값 변수 지정
-        int result = 0;
+
+        //계산 사용하기 위해 Calculator 객체 생성
+        Calculator calculator = new Calculator();
 
         //반복문
 
@@ -36,10 +37,22 @@ public class App {
             System.out.println("두 번째 정수를 입력해주세요: ");
             int second = sc.nextInt();
             //양의 정수만 입력 받기
-            if (second <0) {
+            if (second < 0) {
                 System.out.println("양의 정수만 입력해주세요.");
                 continue;
             }
+
+            // 나눗셈 연산일 때 두번째 숫자에 0이 왔을 경우 다시 입력하게 만들기
+            if (operator == '/' && second == 0) {
+                System.out.println("나눗셈 연산일 때 두 번째 숫자에 0이 입력될 수 없습니다. 처음부터 다시 입력해주세요.");
+                continue;
+            }
+
+
+            //계산
+            //first 입력 후 operator 입력 받고 second 입력 받은 뒤에 사용할 수 있기 때문에
+            //해당 위치에 넣어준다.
+            int result = calculator.calculate(first, second, operator);
 
             //결과
             System.out.println("결과: " + result );
