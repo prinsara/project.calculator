@@ -1,5 +1,6 @@
 package ohyeah.calculator;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -12,7 +13,6 @@ public class App {
         Calculator calculator = new Calculator();
 
         //반복문
-
         for (;;) {
 
             //첫 번째 정수 입력 받기
@@ -56,12 +56,34 @@ public class App {
 
             //결과
             System.out.println("결과: " + result );
+
+            //계산 기록을 보시겠습니까?
+            System.out.println("계산 했던 기록을 보시려면 yes를 입력해주세요.");
+            String history = sc.next();
+            if (history.equals("yes")) {
+                System.out.println("계산 기록: " + calculator.getResults());
+
+                //Setter로 기록 초기화
+                System.out.println("기록을 초기화 하시겠습니까? yes or no");
+                String reset = sc.next();
+                if (reset.equals("yes")) {
+                    //계산 기록 휴지통 추가
+                    ArrayList<Integer> emptyList = new ArrayList<>();
+                    calculator.setResults(emptyList);
+                    System.out.println("계산 기록이 초기화 되었습니다.");
+
+                }
+
+            }
+
             //결과 출력 후 exit 하면 종료할 수 있게끔 표시
             System.out.println("계산기를 종료하시려면 exit를 입력해주세요.");
             String exit = sc.next();
             if (exit.equals("exit")) {
                 break;
             }
+
+
         }
     }
 }
