@@ -15,6 +15,11 @@ public class Calculator {
         this.results = results;
     }
 
+    //기록 삭제 메서드
+    public void removeResult() {
+        results.remove(0);
+    }
+
     public int calculate (int first, int second, char operator) {
         int result = 0;
 
@@ -35,7 +40,5 @@ public class Calculator {
 
         results.add(result); //결과값을 results에 넣기
         return result;
-
-
     }
 }

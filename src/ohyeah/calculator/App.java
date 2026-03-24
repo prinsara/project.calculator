@@ -50,11 +50,20 @@ public class App {
             System.out.println("결과: " + result);
 
             //기록 보시겠습니까? Getter 사용
-            System.out.println("결과 기록을 보시겠습니까?(yes 입력시 기록 출력): ");
+            System.out.println("결과 기록을 보시겠습니까? (yes 입력시 기록 출력): ");
             String resultList = sc.next();
             if (resultList.equals("yes")) {
                 System.out.println(calculator.getResults());
+                //최근 기록 삭제 여부 remove 메서드
+                System.out.println("가장 오래된 기록을 삭제하시겠습니까? (yes 입력시 삭제, 삭제를 원하지 않는다면 아무거나 입력해주세요.): ");
+                String remove = sc.next();
+                if (remove.equals("yes")) {
+                    calculator.removeResult();
+                    System.out.println("변경된 기록: " + calculator.getResults());
+                }
             }
+
+
 
             //exit 입력시 종료
             System.out.println("계산기 종료하시겠습니까? (종료하려면 exit 입력, 이어서 하려면 아무거나 입력): ");
@@ -62,12 +71,6 @@ public class App {
             if (exit.equals("exit")) {
                 break;
             }
-
-
-
-
-
-
 
         }
     }
