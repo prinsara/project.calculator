@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int result = 0; //결과값 변수
+        Calculator calculator = new Calculator();
 
         //반복문 사용
         for (;;) {
@@ -35,28 +35,16 @@ public class App {
                 continue;
             }
 
-            //계산하기
-
-            switch (operator) {
-                case '+' : result = first + second;
-                break;
-
-                case '-' : result = first - second;
-                break;
-
-                case '*' : result = first * second;
-                break;
-
-                case '/' : //나눗셈 연산일 때 두 번째 정수가 0이면 거르기
-                    if (second == 0) {
-                        System.out.println("나눗셈 연산일 때 두 번째 숫자에 0이 올 수 없습니다.");
-                        continue;
-                    }
-                    else {
-                        result = first / second;
-                        break;
-                    }
+            // 나눗셈 연산 두번째 정수 0 거르기
+            if (operator == '/' && second == 0) {
+                System.out.println("나눗셈 연산일 때 두번째 숫자에 0이 올 수 없습니다. 처음부터 다시 입력해주세요.");
+                continue;
             }
+
+
+            //계산 메서드 가져오기
+            int result = calculator.calculate(first, second, operator);
+
 
             //결과값 출력
             System.out.println("결과: " + result);
