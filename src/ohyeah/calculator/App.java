@@ -63,8 +63,6 @@ public class App {
                 }
             }
 
-
-
             //exit 입력시 종료
             System.out.println("계산기 종료하시겠습니까? (종료하려면 exit 입력, 이어서 하려면 아무거나 입력): ");
             String exit = sc.next();
