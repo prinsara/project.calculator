@@ -49,6 +49,13 @@ public class App {
             //결과값 출력
             System.out.println("결과: " + result);
 
+            //기록 보시겠습니까? Getter 사용
+            System.out.println("결과 기록을 보시겠습니까?(yes 입력시 기록 출력): ");
+            String resultList = sc.next();
+            if (resultList.equals("yes")) {
+                System.out.println(calculator.getResults());
+            }
+
             //exit 입력시 종료
             System.out.println("계산기 종료하시겠습니까? (종료하려면 exit 입력, 이어서 하려면 아무거나 입력): ");
             String exit = sc.next();

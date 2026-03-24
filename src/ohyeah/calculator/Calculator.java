@@ -6,6 +6,15 @@ public class Calculator {
 
     private ArrayList<Integer> results = new ArrayList<>();
 
+    //get, set(Setter) Calculator에만 만들고 App에서 구현X
+    public ArrayList<Integer> getResults() {
+        return results;
+    }
+
+    public void setResults() {
+        this.results = results;
+    }
+
     public int calculate (int first, int second, char operator) {
         int result = 0;
 
@@ -24,7 +33,9 @@ public class Calculator {
                 break;
         }
 
-        results.add(result);
+        results.add(result); //결과값을 results에 넣기
         return result;
+
+
     }
 }
