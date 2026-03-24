@@ -11,7 +11,7 @@ public class Calculator {
         return results;
     }
 
-    public void setResults() {
+    public void setResults(ArrayList<Integer> results) {
         this.results = results;
     }
 
